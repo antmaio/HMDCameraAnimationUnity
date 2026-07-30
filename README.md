@@ -4,12 +4,13 @@ Unity application for self-avatar AI-based full-body tracking from HMd and a mul
 
 <!-- ![Snapshot](docs/Snapshot_20260616_111553.png) -->
 
-
 ## Requirements 
 - **Hardware:** 
 - - Tested on MetaQuest 3
 - - Nvidia GeForce RTX3080Ti
 - - Works with Link cable 
+- - Set up of calibrated RGB cameras
+- - Calibration performed between HMD and external cameras    
 - **Unity:** Tested on Unity 6000.1.14f1
 - **Packages:**
     - Meta MR Utility Kit 201.0.0
@@ -20,28 +21,26 @@ Unity application for self-avatar AI-based full-body tracking from HMd and a mul
     - XR Plugin Managment 4.5.3
 
 ## Installation
-
 1. Create a Unity project
 2. Install the required packages listed below.
-3. Copy paste SMPL-X folder from ```https://gitlab.tuebingen.mpg.de/jtesch/smplx-unity``` ```(./Assets/SMPLX)``` into ```./Assets/``` from your Unity project.
+3. Copy paste SMPL-X folder ```(./Assets/SMPLX)``` from [SMPL-X repo](https://gitlab.tuebingen.mpg.de/jtesch/smplx-unity) into ```./Assets/``` from your Unity project.
 4. Clone the repository  
 ```bash 
      git clone https://github.com/antmaio/HMDCameraAnimationUnity
 ```
-5. Download model weights from [Google Drive](https://drive.google.com/file/d/1QAA57ZB748kJsqwg2Go_xSLu_h8N_msV/view?usp=sharing)
+5. Download model weights from [Google Drive](https://drive.google.com/file/d/1QAA57ZB748kJsqwg2Go_xSLu_h8N_msV/view?usp=sharing) and paste them into ```./Assets/Neural Nets/```.
 
 ## Project Structure
 After install, Unity project structure is supposed to look like:
 ```
 Assets/
-├── PassthroughCameraApiSamples/       
-│   ├── PassthroughCamera/
-│   │   ├── Scripts/ 
-│   │   ├── Prefabs/
-│   ├── Start Calibration/ 
-│   │   ├── Scripts/ 
-│   │   ├── Prefabs/
-│   ├── Start Scene/
+├── FullBodyAnimation
+    ├── Scripts
+        ├──
+    ├── Neural Nets
+        └── hmd-poser-ext-smplx_vr_and_3d-p1.onnx
+    └── FullBodyAnimation.unity
+├── SMPLX
 ├── MetaXR/
 ├── Oculus/          
 ├── Plugins/
@@ -49,9 +48,12 @@ Assets/
 ├── Samples/
 ├── StreamingAssets/
 ├── XR/
-└──XRI/
+└── XRI/
 Packages/
 ```
+
+## Usage
+This application works on Play Mode and has not been tested on windows build yet.
 
 ## Features
 - **`SceneReferenceFrame`** — using MRUK's room scan, spawns one coordinate frame per selected surface (floor, ceiling, walls, table, couch), each with a deterministic orientation (world-up + longest edge/wall normal).
