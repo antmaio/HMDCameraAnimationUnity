@@ -20,15 +20,15 @@ Unity application for self-avatar AI-based full-body tracking from HMd and a mul
     - XR Plugin Managment 4.5.3
 
 ## Installation
-1. Clone the below repository and follow their installation guidelines 
-```bash
-   git clone https://github.com/oculus-samples/Unity-PassthroughCameraApiSamples.git
-``` 
-2. Clone the repository  
+
+1. Create a Unity project
+2. Install the required packages listed below.
+3. Copy paste SMPL-X folder from ```https://gitlab.tuebingen.mpg.de/jtesch/smplx-unity``` ```(./Assets/SMPLX)``` into ```./Assets/``` from your Unity project.
+4. Clone the repository  
 ```bash 
-     git clone https://github.com/antmaio/HMDCameraCalibrationUnity
+     git clone https://github.com/antmaio/HMDCameraAnimationUnity
 ```
-3. Copy paste ./Start Calibration/ folder into ./Assets/PassthroughCameraApiSamples/
+5. Download model weights from [Google Drive](https://drive.google.com/file/d/1QAA57ZB748kJsqwg2Go_xSLu_h8N_msV/view?usp=sharing)
 
 ## Project Structure
 After install, Unity project structure is supposed to look like:
